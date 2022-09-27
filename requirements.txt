@@ -1,0 +1,5 @@
+django==4.1.1
+djangorestframework==3.14.0
+pydantic==1.10.2
+xrpl-py==1.6.0
+loguru==0.6.0
