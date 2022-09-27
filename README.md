@@ -3,9 +3,7 @@
 
 ### Starting up
 
-```git clone git@github.com:Stasyanz/cyprus.git```
-
-```cd cyprus```
+```git clone git@github.com:Stasyanz/cyprus.git && cd cyprus```
 
 ```pip install -r requirements.txt```
 
