@@ -43,5 +43,5 @@ class GenerateTransactions(APIView):
             save_transactions_list(transaction_objects_list)
         except Exception as ex:
             logger.error(f"Error during saving transactions list: {ex}")
-            return Response({"status": "Bad"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-        return Response({"status": "Ok"}, status=status.HTTP_200_OK)
+            return Response({'status': 'Bad'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return Response({'status': 'Ok'}, status=status.HTTP_200_OK)
