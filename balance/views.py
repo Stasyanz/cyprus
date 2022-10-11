@@ -5,16 +5,21 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from loguru import logger
 
-from balance.serializers import TransactionSerializer, TransactionsSerializer
-from balance.models import Transaction
+from balance.serializers import WalletSerializer, TransactionSerializer, TransactionsSerializer
+from balance.models import Transaction, Wallet
 from balance.services import get_transactions_list, get_client
 from balance.repository import save_transactions_list
 
 
-class TransactionViewSet(
-                   mixins.RetrieveModelMixin,
-                   mixins.ListModelMixin,
-                   viewsets.GenericViewSet):
+class WalletViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    API endpoint that allows Wallets to be viewed.
+    """
+    queryset = Wallet.objects.all()
+    serializer_class = WalletSerializer
+
+
+class TransactionViewSet(viewsets.ReadOnlyModelViewSet):
     """
     API endpoint that allows Txns to be viewed.
     """

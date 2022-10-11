@@ -17,7 +17,7 @@ def get_client() -> JsonRpcClient:
 def get_transactions_list(address: str, client: JsonRpcClient) -> List[dict]:
     """Get account transactions"""
     account_transactions: list = get_account_payment_transactions(address=address, client=client)
-    transaction_objects_list = [ ]
+    transaction_objects_list = []
     if account_transactions:
         for message in account_transactions:
             tx_data = message["tx"]
