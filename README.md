@@ -5,26 +5,18 @@
 
 ```git clone git@github.com:Stasyanz/cyprus.git && cd cyprus```
 
-```pip install -r requirements.txt```
+```docker-compose run django python manage.py makemigrations```
 
-```python manage.py makemigrations```
+```docker-compose run django python manage.py migrate```
 
-```python manage.py migrate```
+```docker-compose run django python manage.py createsuperuser```
 
-```python manage.py createsuperuser```
+```docker-compose up```
 
-```python manage.py runserver```
+Go to [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/) to add a Wallet address
 
-Run Redis in a new terminal window:
+Sample Wallet address: `rEb8TK3gBgk5auZkwc6sHnwrGVJH8DuaLh`
 
-```docker-compose up redis```
+Transactions are being added on Wallet save
 
-Run Celery in a new terminal window:
-
-```celery -A balance worker -l INFO```
-
-Go to [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
-
-### Adding transactions for another address you want to watch
-
-Transactions are being added on Wallet save (in admin interface)
+Go to [http://127.0.0.1:8000/](http://127.0.0.1:8000/) for API

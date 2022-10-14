@@ -1,11 +1,13 @@
 """Celery app"""
 
+import os
+
 from celery import Celery
 
 
 app = Celery('balance',
-             broker='redis://127.0.0.1:6379/0',
-             # backend='rpc://',
+             broker=os.getenv("CELERY_BROKER"),
+             # backend=os.getenv("CELERY_BACKEND"),
              include=['balance.tasks'])
 
 app.conf.update(
