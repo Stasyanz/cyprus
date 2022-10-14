@@ -3,3 +3,5 @@ djangorestframework==3.14.0
 pydantic==1.9.2
 xrpl-py==1.6.0
 loguru==0.6.0
+celery==5.2.7
+redis==4.3.4

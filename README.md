@@ -15,11 +15,16 @@
 
 ```python manage.py runserver```
 
-Go to [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+Run Redis in a new terminal window:
 
+```docker-compose up redis```
+
+Run Celery in a new terminal window:
+
+```celery -A balance worker -l INFO```
+
+Go to [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
 ### Adding transactions for another address you want to watch
 
-```GET /api/get-data/<ripple address here>```
-
-Sample request: [http://127.0.0.1:8000/api/get-data/rEb8TK3gBgk5auZkwc6sHnwrGVJH8DuaLh/](http://127.0.0.1:8000/api/get-data/rEb8TK3gBgk5auZkwc6sHnwrGVJH8DuaLh/)
+Transactions are being added on Wallet save (in admin interface)

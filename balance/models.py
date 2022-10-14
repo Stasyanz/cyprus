@@ -4,7 +4,7 @@ from django.db import models
 
 
 class Wallet(models.Model):
-    address = models.CharField(max_length=200, primary_key=True)
+    address = models.CharField(max_length=200, unique=True)
 
     def __str__(self):
         return f'{self.address}'
@@ -22,3 +22,4 @@ class Transaction(models.Model):
 
     def __str__(self):
         return f'{self.hash}'
+
